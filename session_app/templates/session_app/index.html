@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+        .image{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% for product in products %}
+        <img src="{{ product.image_url}}" class = "image"alt="">
+        <a href="{% url 'product' product.id %}"><h3>{{product.title}}</h3></a>
+        {%endfor%}
+    </div>
+</body>
+</html>

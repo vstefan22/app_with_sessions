@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{product.title}}</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main_image {
+            width: 400px;
+            height: 400px;
+        }
+
+        .related_image {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{product.title}}</h1>
+        <img src="{{product.image_url}}" class = "main_image">
+        <p>{{product.description}}</p>
+        <h3>Recently viewd</h3>
+        <div class="related">
+            {% for i in recently_viewed%}
+            <img src="{{i.image_url}}" class="related_image" alt="">
+            {%endfor%}
+        </div>
+    </div>
+</body>
+</html>
